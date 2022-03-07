@@ -1,0 +1,8 @@
+---
+- name: role git - add
+  shell: |
+    git add --all
+  args:
+    chdir: "{{ git_working_dir_path }}/{{ git_file_path }}"
+  register: git_add_results
+  run_once: yes

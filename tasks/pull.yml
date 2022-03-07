@@ -1,0 +1,9 @@
+---
+- name: role git - push repository
+  shell: |
+    git branch -M {{ git_repo_branch }}
+    git pull -u {{ git_repo_path }} {{ git_repo_branch }}
+  args:
+    chdir: "{{ git_working_dir_path }}/{{ git_file_path }}"
+  register: git_pull_results
+  run_once: yes

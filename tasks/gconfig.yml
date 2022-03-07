@@ -1,0 +1,10 @@
+---
+- name: role git - global config setup
+  shell: |
+    git config --global user.email '{{ git_user_email }}'
+    git config --global user.name '{{ git_username }}'
+    git config --global push.default simple
+  args:
+    chdir: "{{ git_working_dir_path }}/{{ git_file_path }}"
+  register: git_gconfig_results
+  run_once: yes

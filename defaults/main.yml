@@ -1,0 +1,10 @@
+---
+# defaults file for role_git
+
+git_branch: master
+git_commit_message: 'Updated files with ansible'
+git_repo_path: origin
+git_repo_url: ''
+git_user_email: ''
+git_username: ''
+git_working_dir_path: ''

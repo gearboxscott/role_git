@@ -1,0 +1,10 @@
+---
+- name: role git - config setup
+  shell: |
+    git config user.email '{{ git_user_email }}'
+    git config user.name '{{ git_username }}'
+    git config push.default simple
+  args:
+    chdir: "{{ git_working_dir_path }}/{{ git_file_path }}"
+  register: git_config_results
+  run_once: yes
