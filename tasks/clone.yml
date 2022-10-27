@@ -1,9 +1,12 @@
 ---
+
 - name: role git - clone repository
-  shell: |
+  ansible.builtin.shell: |
     git clone "{{ git_repo_url }}"
   args:
     chdir: "{{ git_working_dir_path }}"
   register: git_clone_results
   delegate_to: localhost
   run_once: yes
+
+...

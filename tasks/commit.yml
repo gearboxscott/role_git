@@ -1,8 +1,11 @@
 ---
+
 - name: role git - commit
-  shell: |
+  ansible.builtin.shell: |
     git commit -m "{{ git_commit_message }}"
   args:
     chdir: "{{ git_working_dir_path }}/{{ git_file_path }}"
   register: git_commit_results
   run_once: yes
+
+...
